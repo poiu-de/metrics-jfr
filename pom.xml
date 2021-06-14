@@ -4,7 +4,7 @@
 
   <groupId>de.poiu.metrics</groupId>
   <artifactId>metrics-jfr</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.2-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>Metrics Reporting via Java Flight Recorder Events</name>
