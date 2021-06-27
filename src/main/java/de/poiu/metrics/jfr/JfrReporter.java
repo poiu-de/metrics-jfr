@@ -410,7 +410,7 @@ public class JfrReporter extends ScheduledReporter {
 
       final var fields = new ArrayList<ValueDescriptor>();
       final var countAnnotation = Collections.singletonList(new AnnotationElement(Label.class, "Count"));
-      fields.add(new ValueDescriptor(long.class, "count", countAnnotation));
+      fields.add(new ValueDescriptor(long.class, "_01_count", countAnnotation));
 
       return EventFactory.create(eventAnnotations, fields);
     }
@@ -421,7 +421,7 @@ public class JfrReporter extends ScheduledReporter {
 
       final var fields = new ArrayList<ValueDescriptor>();
       final var valueAnnotation = Collections.singletonList(new AnnotationElement(Label.class, "Value"));
-      fields.add(new ValueDescriptor(String.class, "value", valueAnnotation));
+      fields.add(new ValueDescriptor(String.class, "_01_value", valueAnnotation));
 
       return EventFactory.create(eventAnnotations, fields);
     }
@@ -434,73 +434,73 @@ public class JfrReporter extends ScheduledReporter {
       final var valueAnnotation = List.of(
         new AnnotationElement(Label.class, "Count"),
         new AnnotationElement(Description.class, "The number of emitted events."));
-      fields.add(new ValueDescriptor(long.class, "count", valueAnnotation));
+      fields.add(new ValueDescriptor(long.class, "_01_count", valueAnnotation));
 
       final var rateUnitAnnotation = List.of(
         new AnnotationElement(Label.class, "Rate Unit"),
         new AnnotationElement(Description.class, "The unit of the rates in this metric."));
-      fields.add(new ValueDescriptor(String.class, "rateUnit", rateUnitAnnotation));
+      fields.add(new ValueDescriptor(String.class, "_02_rateUnit", rateUnitAnnotation));
       final var rateMeanAnnotation = List.of(
         new AnnotationElement(Label.class, "Rate Mean"),
         new AnnotationElement(Description.class, "The mean rate of events."));
-      fields.add(new ValueDescriptor(double.class, "meanRate", rateMeanAnnotation));
+      fields.add(new ValueDescriptor(double.class, "_03_meanRate", rateMeanAnnotation));
       final var rateM1Annotation = List.of(
         new AnnotationElement(Label.class, "Rate M1"),
         new AnnotationElement(Description.class, "The rate per 1 minute."));
-      fields.add(new ValueDescriptor(double.class, "m1Rate", rateM1Annotation));
+      fields.add(new ValueDescriptor(double.class, "_04_m1Rate", rateM1Annotation));
       final var rateM5Annotation = List.of(
         new AnnotationElement(Label.class, "Rate M5"),
         new AnnotationElement(Description.class, "The rate per 5 minutes."));
-      fields.add(new ValueDescriptor(double.class, "m5Rate", rateM5Annotation));
+      fields.add(new ValueDescriptor(double.class, "_05_m5Rate", rateM5Annotation));
       final var rateM15Annotation = List.of(
         new AnnotationElement(Label.class, "Rate M15"),
         new AnnotationElement(Description.class, "The rate per 15 minutes."));
-      fields.add(new ValueDescriptor(double.class, "m15Rate", rateM15Annotation));
+      fields.add(new ValueDescriptor(double.class, "_06_m15Rate", rateM15Annotation));
 
       final var durationUnitAnnotation = List.of(
         new AnnotationElement(Label.class, "Duration Unit"),
         new AnnotationElement(Description.class, "The unit of the durtions in this metric."));
-      fields.add(new ValueDescriptor(String.class, "durationUnit", durationUnitAnnotation));
+      fields.add(new ValueDescriptor(String.class, "_07_durationUnit", durationUnitAnnotation));
       final var minAnnotation = List.of(
         new AnnotationElement(Label.class, "Min"),
         new AnnotationElement(Description.class, "The minimum duration of all events."));
-      fields.add(new ValueDescriptor(double.class, "min", minAnnotation));
+      fields.add(new ValueDescriptor(double.class, "_08_min", minAnnotation));
       final var maxAnnotation = List.of(
         new AnnotationElement(Label.class, "Max"),
         new AnnotationElement(Description.class, "The maximum value of all events."));
-      fields.add(new ValueDescriptor(double.class, "max", maxAnnotation));
+      fields.add(new ValueDescriptor(double.class, "_09_max", maxAnnotation));
       final var meanAnnotation = List.of(
         new AnnotationElement(Label.class, "Mean"),
         new AnnotationElement(Description.class, "The mean value of all events."));
-      fields.add(new ValueDescriptor(double.class, "mean", meanAnnotation));
+      fields.add(new ValueDescriptor(double.class, "_10_mean", meanAnnotation));
       final var stdDevAnnotation = List.of(
         new AnnotationElement(Label.class, "StdDev"),
         new AnnotationElement(Description.class, "The standard deviation."));
-      fields.add(new ValueDescriptor(double.class, "stdDev", stdDevAnnotation));
+      fields.add(new ValueDescriptor(double.class, "_11_stdDev", stdDevAnnotation));
       final var medianAnnotation = List.of(
         new AnnotationElement(Label.class, "Median (P50)"),
         new AnnotationElement(Description.class, "The median value of all events."));
-      fields.add(new ValueDescriptor(double.class, "median", medianAnnotation));
+      fields.add(new ValueDescriptor(double.class, "_12_median", medianAnnotation));
       final var p75Annotation = List.of(
         new AnnotationElement(Label.class, "P75"),
         new AnnotationElement(Description.class, "The 75th percentile."));
-      fields.add(new ValueDescriptor(double.class, "p75", p75Annotation));
+      fields.add(new ValueDescriptor(double.class, "_13_p75", p75Annotation));
       final var p95Annotation = List.of(
         new AnnotationElement(Label.class, "P95"),
         new AnnotationElement(Description.class, "The 95th percentile."));
-      fields.add(new ValueDescriptor(double.class, "p95", p95Annotation));
+      fields.add(new ValueDescriptor(double.class, "_14_p95", p95Annotation));
       final var p98Annotation = List.of(
         new AnnotationElement(Label.class, "P98"),
         new AnnotationElement(Description.class, "The 98th percentile."));
-      fields.add(new ValueDescriptor(double.class, "p98", p98Annotation));
+      fields.add(new ValueDescriptor(double.class, "_15_p98", p98Annotation));
       final var p99Annotation = List.of(
         new AnnotationElement(Label.class, "P99"),
         new AnnotationElement(Description.class, "The 99th percentile."));
-      fields.add(new ValueDescriptor(double.class, "p99", p99Annotation));
+      fields.add(new ValueDescriptor(double.class, "_16_p99", p99Annotation));
       final var p999Annotation = List.of(
         new AnnotationElement(Label.class, "P999"),
         new AnnotationElement(Description.class, "The 999th percentile."));
-      fields.add(new ValueDescriptor(double.class, "p999", p999Annotation));
+      fields.add(new ValueDescriptor(double.class, "_17_p999", p999Annotation));
 
       return EventFactory.create(eventAnnotations, fields);
     }
@@ -513,28 +513,28 @@ public class JfrReporter extends ScheduledReporter {
       final var valueAnnotation = List.of(
         new AnnotationElement(Label.class, "Count"),
         new AnnotationElement(Description.class, "The number of emitted events."));
-      fields.add(new ValueDescriptor(long.class, "count", valueAnnotation));
+      fields.add(new ValueDescriptor(long.class, "_01_count", valueAnnotation));
 
       final var rateUnitAnnotation = List.of(
         new AnnotationElement(Label.class, "Rate Unit"),
         new AnnotationElement(Description.class, "The unit of the rates in this metric."));
-      fields.add(new ValueDescriptor(String.class, "rateUnit", rateUnitAnnotation));
+      fields.add(new ValueDescriptor(String.class, "_02_rateUnit", rateUnitAnnotation));
       final var rateMeanAnnotation = List.of(
         new AnnotationElement(Label.class, "Rate Mean"),
         new AnnotationElement(Description.class, "The mean rate of events."));
-      fields.add(new ValueDescriptor(double.class, "meanRate", rateMeanAnnotation));
+      fields.add(new ValueDescriptor(double.class, "_03_meanRate", rateMeanAnnotation));
       final var rateM1Annotation = List.of(
         new AnnotationElement(Label.class, "Rate M1"),
         new AnnotationElement(Description.class, "The rate per 1 minute."));
-      fields.add(new ValueDescriptor(double.class, "m1Rate", rateM1Annotation));
+      fields.add(new ValueDescriptor(double.class, "_04_m1Rate", rateM1Annotation));
       final var rateM5Annotation = List.of(
         new AnnotationElement(Label.class, "Rate M5"),
         new AnnotationElement(Description.class, "The rate per 5 minutes."));
-      fields.add(new ValueDescriptor(double.class, "m5Rate", rateM5Annotation));
+      fields.add(new ValueDescriptor(double.class, "_05_m5Rate", rateM5Annotation));
       final var rateM15Annotation = List.of(
         new AnnotationElement(Label.class, "Rate M15"),
         new AnnotationElement(Description.class, "The rate per 15 minutes."));
-      fields.add(new ValueDescriptor(double.class, "m15Rate", rateM15Annotation));
+      fields.add(new ValueDescriptor(double.class, "_06_m15Rate", rateM15Annotation));
 
       return EventFactory.create(eventAnnotations, fields);
     }
@@ -547,52 +547,52 @@ public class JfrReporter extends ScheduledReporter {
       final var valueAnnotation = List.of(
         new AnnotationElement(Label.class, "Count"),
         new AnnotationElement(Description.class, "The number of emitted events."));
-      fields.add(new ValueDescriptor(long.class, "count", valueAnnotation));
+      fields.add(new ValueDescriptor(long.class, "_01_count", valueAnnotation));
 
       final var durationUnitAnnotation = List.of(
         new AnnotationElement(Label.class, "Duration Unit"),
         new AnnotationElement(Description.class, "The unit of the durtions in this metric."));
-      fields.add(new ValueDescriptor(String.class, "durationUnit", durationUnitAnnotation));
+      fields.add(new ValueDescriptor(String.class, "_02_durationUnit", durationUnitAnnotation));
       final var minAnnotation = List.of(
         new AnnotationElement(Label.class, "Min"),
         new AnnotationElement(Description.class, "The minimum duration of all events."));
-      fields.add(new ValueDescriptor(double.class, "min", minAnnotation));
+      fields.add(new ValueDescriptor(double.class, "_03_min", minAnnotation));
       final var maxAnnotation = List.of(
         new AnnotationElement(Label.class, "Max"),
         new AnnotationElement(Description.class, "The maximum value of all events."));
-      fields.add(new ValueDescriptor(double.class, "max", maxAnnotation));
+      fields.add(new ValueDescriptor(double.class, "_04_max", maxAnnotation));
       final var meanAnnotation = List.of(
         new AnnotationElement(Label.class, "Mean"),
         new AnnotationElement(Description.class, "The mean value of all events."));
-      fields.add(new ValueDescriptor(double.class, "mean", meanAnnotation));
+      fields.add(new ValueDescriptor(double.class, "_05_mean", meanAnnotation));
       final var stdDevAnnotation = List.of(
         new AnnotationElement(Label.class, "StdDev"),
         new AnnotationElement(Description.class, "The standard deviation."));
-      fields.add(new ValueDescriptor(double.class, "stdDev", stdDevAnnotation));
+      fields.add(new ValueDescriptor(double.class, "_06_stdDev", stdDevAnnotation));
       final var medianAnnotation = List.of(
         new AnnotationElement(Label.class, "Median (P50)"),
         new AnnotationElement(Description.class, "The median value of all events."));
-      fields.add(new ValueDescriptor(double.class, "median", medianAnnotation));
+      fields.add(new ValueDescriptor(double.class, "_07_median", medianAnnotation));
       final var p75Annotation = List.of(
         new AnnotationElement(Label.class, "P75"),
         new AnnotationElement(Description.class, "The 75th percentile."));
-      fields.add(new ValueDescriptor(double.class, "p75", p75Annotation));
+      fields.add(new ValueDescriptor(double.class, "_08_p75", p75Annotation));
       final var p95Annotation = List.of(
         new AnnotationElement(Label.class, "P95"),
         new AnnotationElement(Description.class, "The 95th percentile."));
-      fields.add(new ValueDescriptor(double.class, "p95", p95Annotation));
+      fields.add(new ValueDescriptor(double.class, "_09_p95", p95Annotation));
       final var p98Annotation = List.of(
         new AnnotationElement(Label.class, "P98"),
         new AnnotationElement(Description.class, "The 98th percentile."));
-      fields.add(new ValueDescriptor(double.class, "p98", p98Annotation));
+      fields.add(new ValueDescriptor(double.class, "_10_p98", p98Annotation));
       final var p99Annotation = List.of(
         new AnnotationElement(Label.class, "P99"),
         new AnnotationElement(Description.class, "The 99th percentile."));
-      fields.add(new ValueDescriptor(double.class, "p99", p99Annotation));
+      fields.add(new ValueDescriptor(double.class, "_11_p99", p99Annotation));
       final var p999Annotation = List.of(
         new AnnotationElement(Label.class, "P999"),
         new AnnotationElement(Description.class, "The 999th percentile."));
-      fields.add(new ValueDescriptor(double.class, "p999", p999Annotation));
+      fields.add(new ValueDescriptor(double.class, "_12_p999", p999Annotation));
 
       return EventFactory.create(eventAnnotations, fields);
     }
