@@ -221,7 +221,7 @@ public class JfrReporter extends ScheduledReporter {
 
         if (!counters.isEmpty()) {
             for (Map.Entry<String, Counter> entry : counters.entrySet()) {
-                publishCounter(entry.getKey(), entry);
+                publishCounter(entry.getKey(), entry.getValue());
             }
         }
 
@@ -273,13 +273,13 @@ public class JfrReporter extends ScheduledReporter {
         event.commit();
     }
 
-    private void publishCounter(String name, Map.Entry<String, Counter> entry) {
+    private void publishCounter(String name, Counter counter) {
         final EventFactory f= this.eventFactories.computeIfAbsent(name, this::createCounterEventFactory);
 
         final Event event = f.newEvent();
 
         if (event.shouldCommit()) {
-          event.set(0, entry.getValue().getCount());
+          event.set(0, counter.getCount());
         }
 
         event.commit();
