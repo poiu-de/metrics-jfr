@@ -13,7 +13,7 @@
     A reporter implemention for dropwizard-metrics that reports metrics
     via Java Flight Recorder Events.
   </description>
-  <url>https://github.com/poiu-de/coat</url>
+  <url>https://github.com/poiu-de/metrics-jfr</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -68,7 +68,7 @@ import static com.codahale.metrics.MetricAttribute.P999;
 import static com.codahale.metrics.MetricAttribute.STDDEV;
 
 /**
- * A reporter which outputs measurements as JFR Events..
+ * A reporter which outputs measurements as JFR Events.
  */
 public class JfrReporter extends ScheduledReporter {
     /**
@@ -83,7 +83,7 @@ public class JfrReporter extends ScheduledReporter {
 
 
     /**
-     * A builder for {@link JfrReporter} instances. Defaults to converting rates  to events/seconds
+     * A builder for {@link JfrReporter} instances. Defaults to converting rates to events/seconds
      * durations to milliseconds and not filtering metrics.
      */
     public static class Builder {
