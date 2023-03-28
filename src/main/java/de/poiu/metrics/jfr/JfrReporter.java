@@ -308,36 +308,35 @@ public class JfrReporter extends ScheduledReporter {
           }
 
           Snapshot snapshot  = histogram.getSnapshot();
-          event.set(1, getDurationUnit());
           if (!getDisabledMetricAttributes().contains(MIN)) {
-            event.set(2, convertDuration(snapshot.getMin()));
+            event.set(1, snapshot.getMin());
           }
           if (!getDisabledMetricAttributes().contains(MAX)) {
-            event.set(3, convertDuration(snapshot.getMax()));
+            event.set(2, snapshot.getMax());
           }
           if (!getDisabledMetricAttributes().contains(MEAN)) {
-            event.set(4, convertDuration(snapshot.getMean()));
+            event.set(3, snapshot.getMean());
           }
           if (!getDisabledMetricAttributes().contains(STDDEV)) {
-            event.set(5, convertDuration(snapshot.getStdDev()));
+            event.set(4, snapshot.getStdDev());
           }
           if (!getDisabledMetricAttributes().contains(P50)) {
-            event.set(6, convertDuration(snapshot.getMedian()));
+            event.set(5, snapshot.getMedian());
           }
           if (!getDisabledMetricAttributes().contains(P75)) {
-            event.set(7, convertDuration(snapshot.get75thPercentile()));
+            event.set(6, snapshot.get75thPercentile());
           }
           if (!getDisabledMetricAttributes().contains(P95)) {
-            event.set(8, convertDuration(snapshot.get95thPercentile()));
+            event.set(7, snapshot.get95thPercentile());
           }
           if (!getDisabledMetricAttributes().contains(P98)) {
-            event.set(9, convertDuration(snapshot.get98thPercentile()));
+            event.set(8, snapshot.get98thPercentile());
           }
           if (!getDisabledMetricAttributes().contains(P99)) {
-            event.set(10, convertDuration(snapshot.get99thPercentile()));
+            event.set(9, snapshot.get99thPercentile());
           }
           if (!getDisabledMetricAttributes().contains(P999)) {
-            event.set(11, convertDuration(snapshot.get999thPercentile()));
+            event.set(10, snapshot.get999thPercentile());
           }
         }
 
@@ -549,10 +548,6 @@ public class JfrReporter extends ScheduledReporter {
         new AnnotationElement(Description.class, "The number of emitted events."));
       fields.add(new ValueDescriptor(long.class, "_01_count", valueAnnotation));
 
-      final var durationUnitAnnotation = List.of(
-        new AnnotationElement(Label.class, "Duration Unit"),
-        new AnnotationElement(Description.class, "The unit of the durtions in this metric."));
-      fields.add(new ValueDescriptor(String.class, "_02_durationUnit", durationUnitAnnotation));
       final var minAnnotation = List.of(
         new AnnotationElement(Label.class, "Min"),
         new AnnotationElement(Description.class, "The minimum duration of all events."));
