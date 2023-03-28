@@ -4,7 +4,7 @@
 
   <groupId>de.poiu.metrics</groupId>
   <artifactId>metrics-jfr</artifactId>
-  <version>0.0.3-SNAPSHOT</version>
+  <version>0.0.3</version>
   <packaging>jar</packaging>
 
   <name>Metrics Reporting via Java Flight Recorder Events</name>
@@ -33,7 +33,7 @@
     <url>https://github.com/poiu-de/metrics-jfr</url>
     <connection>scm:git:git://github.com/poiu-de/metrics-jfr.git</connection>
     <developerConnection>scm:git:git@github.com:poiu-de/metrics-jfr.git</developerConnection>
-    <tag>metrics-jfr-0.0.1</tag>
+    <tag>metrics-jfr-0.0.3</tag>
   </scm>
 
   <issueManagement>
